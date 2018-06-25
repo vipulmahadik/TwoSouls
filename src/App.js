@@ -1,12 +1,23 @@
 import React, {Component} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import './App.less';
+import {SectionsContainer, Section} from 'react-fullpage';
 
 class App extends Component {
     render() {
+        let options = {
+            anchors:              ['Welcome', 'Venue', 'About', 'Message'],
+            scrollBar:            false,
+            navigation:           true,
+            verticalAlign:        false,
+            sectionPaddingTop:    '50px',
+            sectionPaddingBottom: '50px',
+            arrowNavigation:      true
+        };
+
         return (
-            <div className="TwoSouls">
-                <div className="app-page bg-color-gray">
+            <SectionsContainer className="TwoSouls" {...options}>
+                <Section className="app-page bg-color-gray">
                     <div className="center-wrapper">
                         <Container>
                             <Row>
@@ -15,8 +26,8 @@ class App extends Component {
                             </Row>
                         </Container>
                     </div>
-                </div>
-                <div className="app-page">
+                </Section>
+                <Section className="app-page">
                     <div className="center-wrapper">
                         <Container>
                             <Row>
@@ -29,8 +40,8 @@ class App extends Component {
                             </Row>
                         </Container>
                     </div>
-                </div>
-                <div className="app-page bg-color-gray">
+                </Section>
+                <Section className="app-page bg-color-gray">
                     <div className="center-wrapper">
                         <Container>
                             <Row>
@@ -44,8 +55,8 @@ class App extends Component {
                             </Row>
                         </Container>
                     </div>
-                </div>
-                <div className="app-page">
+                </Section>
+                <Section className="app-page">
                     <div className="center-wrapper">
                         <Container>
                             <Row>
@@ -64,8 +75,8 @@ class App extends Component {
                             </Row>
                         </Container>
                     </div>
-                </div>
-            </div>
+                </Section>
+            </SectionsContainer>
         );
     }
 }
